@@ -14,21 +14,21 @@ A simple PHP + MySQL web form where users can submit their name, their crush's n
 ---
 
 ## 📁 Project Structure
-
+<br>
 📜 4. File & Folder Permissions
 Make sure Apache can read the files:
 sudo chown -R apache:apache /var/www/html
 sudo chmod -R 755 /var/www/html
 
 
-
+<br>
 🧪 Troubleshooting
 🔸 MySQL Error: Access denied for user 'root'@'localhost'
 Run this inside MySQL:
 in sql 
 ALTER USER 'root'@'localhost' IDENTIFIED BY '';
 FLUSH PRIVILEGES;
-
+<br>
 🙌 Author
 Shivam Garud
 Certified DevOps & Python Developer
