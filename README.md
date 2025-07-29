@@ -1,36 +1,64 @@
 # 💖 Crush & Drink Preference Form – LAMP Project
+cat << 'EOF' > README.md
+# 💘 Crush Form – PHP + MySQL Web App
 
-A simple PHP + MySQL web form where users can submit their name, their crush's name, and select from a list of drinks/smokes. All data is stored in a MySQL (MariaDB) database.
+A **simple PHP + MySQL web form** where users can submit:
+- Their **name**
+- Their **crush's name**
+- A selection from a list of **drinks/smokes**
+
+All submitted data is stored in a **MySQL (MariaDB)** database.
 
 ---
 
 ## 📦 Tech Stack
 
-- **L**inux (Amazon Linux 2 / CentOS)
-- **A**pache (httpd)
-- **M**ySQL (MariaDB 10.5)
-- **P**HP 7+
+- **L**inux – Amazon Linux 2 / CentOS  
+- **A**pache – httpd Web Server  
+- **M**ySQL – MariaDB 10.5  
+- **P**HP – Version 7+
 
 ---
 
 ## 📁 Project Structure
-<br>
-📜 4. File & Folder Permissions
-Make sure Apache can read the files:
+
+\`\`\`bash
+/var/www/html/
+├── index.php            # Main form page
+├── process.php          # Handles form submission
+├── db_config.php        # Database connection file
+└── styles.css           # Optional styling
+\`\`\`
+
+---
+
+## 🔐 File & Folder Permissions
+
+Ensure Apache can read and serve your files correctly:
+
+\`\`\`bash
 sudo chown -R apache:apache /var/www/html
 sudo chmod -R 755 /var/www/html
+\`\`\`
 
+---
 
-<br>
-🧪 Troubleshooting
-🔸 MySQL Error: Access denied for user 'root'@'localhost'
-Run this inside MySQL:
-in sql 
+## 🧪 Troubleshooting
+
+### 🔸 MySQL Error: \`Access denied for user 'root'@'localhost'\`
+
+If you're facing access issues with MySQL, reset the root user password:
+
+\`\`\`sql
 ALTER USER 'root'@'localhost' IDENTIFIED BY '';
 FLUSH PRIVILEGES;
-<br>
-🙌 Author
-Shivam Garud
-Certified DevOps & Python Developer
-Built with ❤️ using LAMP on EC2/Linux
+\`\`\`
 
+---
+
+## 🙌 Author
+
+**Shivam Garud**  
+Certified DevOps & Python Developer  
+Built with ❤️ using the **LAMP stack** on **Amazon EC2/Linux**
+EOF
