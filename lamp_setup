@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Install packages
+sudo yum update -y
+sudo yum upgrade -y
+sudo yum install -y httpd mariadb105-server php php-mysqli
+
+# Start services
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+
+# Secure MariaDB
+# Uncomment below for security setup (optional):
+# sudo mysql_secure_installation
+
+# Create PHP index page
+cd /var/www/html
+echo "<?php phpinfo(); ?>" | sudo tee index.php
+
+# Download SQL setup file and form
+cat <<EOF | sudo tee /var/www/html/form.php
+$(< form.php)  # Replace with actual script content if needed here
+EOF
+
+# Permissions
+sudo chown -R apache:apache /var/www/html
+sudo chmod -R 755 /var/www/html
+
+# Print instruction
+echo "🔥 Setup Complete. Visit http://<your-server-ip>/form.php"
